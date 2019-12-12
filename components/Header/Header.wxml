@@ -1,0 +1,16 @@
+<!--components/Header/Header.wxml-->
+<view class="header">
+    <navigator class="logo">
+        <image class="img_logo" src="../../icons/bilibili.png" />
+    </navigator> 
+    
+    <view class="search">
+        <image class="img_search" src="../../icons/search.png" />
+    </view>
+    <view class="user">
+        <image class="img_user" src="../../icons/user.png" />
+    </view>
+    <view class="download">
+    下载app
+    </view>
+</view>

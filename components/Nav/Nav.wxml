@@ -1,0 +1,10 @@
+<!--components/Nav/Nav.wxml-->
+<view class="nav_warp">
+    <scroll-view class="nav" scroll-x="{{true}}">
+        <view bind:tap="navActive" data-index="{{index}}"  class="nav_item {{index===navCurrent?'active':''}}" 
+        wx:for="{{navList}}" wx:key="{{index}}">
+            {{item.text}}
+        </view>
+    </scroll-view>
+</view>
+
