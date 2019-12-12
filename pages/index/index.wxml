@@ -1,0 +1,35 @@
+<view >
+    <header></header>
+</view>
+
+<view >
+    <nav></nav>
+</view>
+
+<view class="swiper_warp">
+        <swiper class="swiper" autoplay="{{true}}" duration="500" interval="5000" circular="{{true}}">
+            <block wx:for="{{swiperList}}" wx:key="{{index}}">
+                <swiper-item >
+                    <image class="swiper_img" src="{{item.imgSrc}}" mode="widthFix"/>
+                </swiper-item>
+            </block>
+        </swiper>
+</view>
+
+<view class="video_warp">
+    <navigator url="../detail/detail?id={{item.id}}" class="video_item" wx:for="{{videoList}}" wx:key="{{index}}">
+        <!-- 图片 -->
+        <view class="video_img">
+            <image class="video_img" src="{{item.imgSrc}}" mode="widthFix"/>
+            <!-- 点击量等数据 -->
+            <view class="video_info">
+                <view class="video_playCount">{{item.playCount}}</view>
+                <view class="video_commentCount">{{item.commentCount}}</view>
+            </view>
+        </view>
+        <!-- 标题 -->
+        <view class="video_title">
+            {{item.desc}}
+        </view>
+    </navigator> 
+</view>

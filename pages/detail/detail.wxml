@@ -1,0 +1,55 @@
+<!--pages/detail/detail.wxml-->
+<view id="main">
+<header></header>
+
+<!-- 视频详情 -->
+<view class="video_info">
+    <video  src="{{videodetail.videoSrc}}" />
+    <view class="video_videoTitle">{{videodetail.videoTitle}}</view>
+    <view class="video_author">{{videodetail.author}} {{videodetail.date}}</view>
+</view>
+
+<!-- 推荐视频 -->
+<view class="recommendvideo_warp">
+    <navigator class="recommendvideo_item" wx:for="{{recommendvideoList}}" wx:key="{{index}}">
+        <view class="recommendvideo_img">
+            <image src="{{item.imgSrc}}" mode="widthFix" />
+        </view>
+        <view class="recommendvideo_info">
+            <view class="recommendvideo_title">{{item.title}}</view>
+            <view class="recommendvideo_detail">
+                <text class="recommendvideo_commentCount">{{item.commentCount}}条弹幕</text>
+                <text class="recommendvideo_playMsg">{{item.playMsg}}播放量</text>
+            </view>
+            
+        </view>
+    </navigator>
+</view>
+
+<!-- 评论 -->
+<view class="comment_warp">
+    <!-- 头部 -->
+    <view class="comment_title">
+        评论（{{commentCount}}）
+    </view>
+    <!-- 评论区 -->
+    <view class="comment_list">
+        <view class="comment_item" wx:for="{{commentList}}" wx:key="{{index}}">
+            <view class="comment_left">
+                <image class="comment_useimg" src="{{item.userIconSrc}}" mode="widthFix"/>
+            </view>
+            <view class="comment_right">
+                <view class="comment_detail">
+                    <text class="comment_user">{{item.username}}</text>
+                    <text class="comment_date">{{item.commentDate}}</text>
+                </view>
+                <view class="comment_info">{{item.commentInfo}}</view>
+            </view>
+        </view>
+    </view>   
+</view>
+
+</view>
+
+
+
